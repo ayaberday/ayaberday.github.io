@@ -1,0 +1,315 @@
+[
+  {
+    "slug": "soc-wazuh",
+    "title": "Mini-maquette SOC / SIEM",
+    "category": "SOC & Détection",
+    "status": "Stage · Laboratoire",
+    "description": "Crédit Agricole du Maroc · juillet–septembre 2026. Centraliser les événements de sécurité et rendre les alertes exploitables dans une maquette isolée.",
+    "tools": [
+      "Wazuh",
+      "Docker",
+      "Linux",
+      "Apache",
+      "FIM",
+      "MITRE ATT&CK",
+      "n8n"
+    ],
+    "steps": [
+      "Déployer et configurer la maquette Wazuh et ses agents.",
+      "Collecter les journaux et personnaliser les règles de détection.",
+      "Simuler SQLi, XSS et des comportements de ransomware dans le laboratoire.",
+      "Documenter les événements, les alertes et les procédures de traitement.",
+      "Préparer un contrat d’échange JSON et tester un premier webhook n8n."
+    ],
+    "result": "Centralisation des journaux, scénarios documentés et premier test webhook. Aucun déploiement dans le SI de production de la banque.",
+    "architecture": "Agents Linux / Apache → Wazuh Manager → Indexer → Dashboard ; interface JSON → webhook n8n de test.",
+    "limit": "TheHive, Cortex et l’orchestration SOAR complète constituent un lot collaboratif distinct et une perspective d’intégration, pas une réalisation individuelle industrialisée."
+  },
+  {
+    "slug": "devsecops",
+    "title": "La sécurité, du code au conteneur",
+    "category": "DevSecOps",
+    "status": "PFA · Réalisé",
+    "description": "Club Billard Elite : intégrer des contrôles de sécurité au cycle de développement d’une application Django/PostgreSQL.",
+    "tools": [
+      "Django",
+      "Docker",
+      "GitHub Actions",
+      "Bandit",
+      "pip-audit",
+      "Gitleaks",
+      "Trivy",
+      "OWASP ZAP",
+      "Prometheus",
+      "Grafana"
+    ],
+    "steps": [
+      "Conteneuriser l’application avec un utilisateur non-root.",
+      "Intégrer les contrôles au workflow ; exécution réelle à valider.",
+      "Analyser les images Docker et introduire le test dynamique.",
+      "Mettre en place une première stack de monitoring avec cAdvisor."
+    ],
+    "result": "Une base DevSecOps intégrant conteneurisation, scans et workflow CI/CD est documentée dans le rapport.",
+    "architecture": "Code → GitHub Actions → Bandit / pip-audit / Gitleaks → Docker / Trivy → ZAP ; monitoring Prometheus / Grafana.",
+    "limit": "Publication Docker Hub conditionnée aux secrets GitHub ; dashboards Grafana non finalisés ; signature Cosign non implémentée. Aucun score de sécurité inventé. Exécution réelle du workflow à valider ; rapports de scan non fournis dans le dépôt décrit."
+  },
+  {
+    "slug": "audit",
+    "title": "Identifier. Corriger. Vérifier.",
+    "category": "Sécurité offensive",
+    "status": "Académique · Laboratoire",
+    "description": "Audit et remédiation dans un environnement isolé, avec Metasploitable 2 et des applications volontairement vulnérables.",
+    "tools": [
+      "Kali Linux",
+      "Nmap",
+      "Metasploit",
+      "SQLmap",
+      "Burp Suite",
+      "OWASP ZAP",
+      "DVWA"
+    ],
+    "steps": [
+      "Reconnaître les services exposés.",
+      "Analyser les vulnérabilités SQLi, XSS et CSRF.",
+      "Étudier les risques, appliquer des corrections et vérifier après remédiation."
+    ],
+    "result": "",
+    "architecture": "Kali Linux ↔ cibles volontairement vulnérables dans un laboratoire autorisé.",
+    "limit": "Rapport de tests et preuves avant/après à ajouter ; aucune métrique disponible."
+  },
+  {
+    "slug": "vpn",
+    "title": "Communications sécurisées par VPN",
+    "category": "Réseaux & Systèmes",
+    "status": "Académique · À préciser",
+    "description": "Étudier et mettre en place des communications sécurisées entre réseaux. Le CV mentionne OpenVPN et des accès site-à-site et distant.",
+    "tools": [
+      "VPN",
+      "OpenVPN",
+      "Filtrage",
+      "Segmentation"
+    ],
+    "steps": [
+      "Étudier les tunnels et la sécurisation des échanges.",
+      "Définir les besoins d’authentification et de filtrage."
+    ],
+    "result": "",
+    "architecture": "",
+    "limit": "Topologie, configurations et contribution détaillée à confirmer avant publication de résultats techniques."
+  },
+  {
+    "slug": "zero-trust",
+    "title": "Repenser la confiance : Odoo / PostgreSQL",
+    "category": "GRC & Conception",
+    "status": "Conception et planification",
+    "description": "Plan de projet académique réalisé avec Adam Elouardi en 2025–2026 pour un scénario d’entreprise AlphaBeta.",
+    "tools": [
+      "Zero Trust",
+      "IAM",
+      "MFA",
+      "Segmentation",
+      "Gestion des risques"
+    ],
+    "steps": [
+      "Analyser le contexte, les risques et les actifs sensibles.",
+      "Définir les exigences d’accès et le moindre privilège.",
+      "Planifier les phases de déploiement, la gouvernance et la centralisation des journaux."
+    ],
+    "result": "Livrable : plan de transition et exigences de sécurité. Architecture non déployée.",
+    "architecture": "Architecture cible étudiée : accès contrôlés IAM/MFA → application Odoo → PostgreSQL ; segmentation et journaux centralisés.",
+    "limit": "Schéma de conception uniquement ; aucune validation opérationnelle revendiquée."
+  },
+  {
+    "slug": "supervision",
+    "title": "Quand le réseau ralentit sans tomber",
+    "category": "Réseaux & Systèmes",
+    "status": "Académique · Réalisé",
+    "description": "Observer l’impact d’une panne sur la latence, les pertes et l’accessibilité HTTP dans un laboratoire à trois VM Ubuntu.",
+    "tools": [
+      "Ubuntu",
+      "VirtualBox",
+      "Nginx",
+      "tc/netem",
+      "ping"
+    ],
+    "steps": [
+      "Créer les réseaux LAN et DMZ et activer le routage.",
+      "Installer Nginx et vérifier la connectivité initiale.",
+      "Injecter une latence de 150 ms puis tester un scénario de pertes.",
+      "Comparer RTT, pertes ICMP et accès HTTP."
+    ],
+    "result": "RTT moyen : environ 4,515 ms avant dégradation, 156,629 ms après. Pertes observées : 20 à 30 % sur de petits échantillons pour un taux configuré de 10 %.",
+    "architecture": "VM supervision (LAN) → VM routeur (tc/netem) → VM cible Nginx (DMZ).",
+    "limit": "Mesures de laboratoire ; absence de Prometheus, Grafana ou Zabbix. UFW temporairement désactivé pendant les tests : ce lab ne démontre pas un durcissement de production."
+  },
+  {
+    "slug": "incidents",
+    "title": "Qualifier les incidents pour mieux répondre",
+    "category": "GRC & Conception",
+    "status": "Méthodologie académique",
+    "description": "Travail autour de la gestion et de la classification des incidents selon ISO/IEC 27035.",
+    "tools": [
+      "ISO/IEC 27035",
+      "Classification",
+      "Priorisation"
+    ],
+    "steps": [
+      "Identifier et classer les incidents.",
+      "Évaluer gravité et impact.",
+      "Structurer les procédures de réponse et la documentation."
+    ],
+    "result": "",
+    "architecture": "",
+    "limit": "Cas pratiques et livrables détaillés à ajouter."
+  },
+  {
+    "slug": "dmz",
+    "title": "Infrastructure DMZ virtualisée",
+    "category": "Réseaux & Systèmes",
+    "status": "À documenter",
+    "description": "Projet académique d’infrastructure mentionné dans le parcours.",
+    "tools": [
+      "Proxmox",
+      "VM",
+      "DMZ",
+      "Pare-feu",
+      "NAT"
+    ],
+    "steps": [
+      "Périmètre annoncé : virtualisation, segmentation et filtrage."
+    ],
+    "result": "",
+    "architecture": "",
+    "limit": "Architecture exacte et contribution personnelle à confirmer ; aucune configuration précise présentée comme validée."
+  },
+  {
+    "slug": "linux",
+    "title": "Administration et sécurisation Linux",
+    "category": "Réseaux & Systèmes",
+    "status": "Travaux pratiques",
+    "description": "Regroupement de travaux académiques d’administration Unix/Linux.",
+    "tools": [
+      "Linux",
+      "Unix",
+      "LVM",
+      "RAID",
+      "ACL"
+    ],
+    "steps": [
+      "Étudier le stockage et l’organisation du système de fichiers.",
+      "Travailler sur la gestion des droits et les ACL.",
+      "Aborder la sécurisation de l’environnement."
+    ],
+    "result": "",
+    "architecture": "",
+    "limit": "Commandes, configurations et comptes rendus à ajouter."
+  },
+  {
+    "slug": "rsa",
+    "title": "Comprendre la factorisation de RSA",
+    "category": "Cryptographie & IA",
+    "status": "Travaux académiques",
+    "description": "Étude pédagogique des méthodes de Fermat et rho de Pollard pour la recherche de facteurs non triviaux.",
+    "tools": [
+      "RSA",
+      "Fermat",
+      "Pollard rho"
+    ],
+    "steps": [
+      "Comprendre le lien entre factorisation et RSA.",
+      "Étudier le raisonnement des deux méthodes.",
+      "Comparer leurs conditions d’utilisation."
+    ],
+    "result": "",
+    "architecture": "",
+    "limit": "Compte rendu absent de ce dossier : aucun temps d’exécution, entier factorisé ou résultat expérimental revendiqué."
+  },
+  {
+    "slug": "forensic",
+    "title": "Forensique numérique",
+    "category": "SOC & Détection",
+    "status": "En formation · À enrichir",
+    "description": "Module étudié avec travaux pratiques.",
+    "tools": [
+      "Forensique numérique"
+    ],
+    "steps": [
+      "Comprendre la démarche d’investigation numérique."
+    ],
+    "result": "",
+    "architecture": "",
+    "limit": "Sujets, outils et preuves à fournir avant rédaction des réalisations détaillées."
+  },
+  {
+    "slug": "ia-cyber",
+    "title": "IA appliquée à la cybersécurité",
+    "category": "Cryptographie & IA",
+    "status": "En formation · À enrichir",
+    "description": "Module étudié avec pratique ; rubrique destinée aux notebooks et rapports.",
+    "tools": [
+      "IA",
+      "Cybersécurité"
+    ],
+    "steps": [
+      "Relier les méthodes d’intelligence artificielle aux enjeux de sécurité."
+    ],
+    "result": "",
+    "architecture": "",
+    "limit": "Dataset, algorithmes et résultats à documenter. Aucune performance revendiquée."
+  },
+  {
+    "slug": "mentorat",
+    "title": "Une plateforme pour transmettre",
+    "category": "Développement & IA",
+    "status": "Stage OCP · 2025",
+    "description": "Développement d’une plateforme de mentorat avec Django au cours du stage OCP Group, juillet–septembre 2025.",
+    "tools": [
+      "Python",
+      "Django",
+      "Git",
+      "GitHub",
+      "Render"
+    ],
+    "steps": [
+      "Développer les fonctionnalités de la plateforme.",
+      "Implémenter l’authentification et le contrôle d’accès par rôles.",
+      "Utiliser Git/GitHub et déployer sur Render."
+    ],
+    "result": "Expérience en conception applicative et développement web en environnement professionnel.",
+    "architecture": "",
+    "limit": "Démonstration, architecture détaillée et captures à ajouter. Aucun nombre d’utilisateurs revendiqué."
+  },
+  {
+    "slug": "dentaire",
+    "title": "Gestion d’un cabinet dentaire",
+    "category": "Développement & IA",
+    "status": "Projet académique",
+    "description": "Application académique de gestion utilisant Java et MySQL.",
+    "tools": [
+      "Java",
+      "MySQL"
+    ],
+    "steps": [
+      "Développer une application de gestion dans un cadre pédagogique."
+    ],
+    "result": "",
+    "architecture": "",
+    "limit": "Fonctionnalités exactes, architecture et captures à documenter."
+  },
+  {
+    "slug": "energie",
+    "title": "Classification énergétique des bâtiments",
+    "category": "Développement & IA",
+    "status": "Projet académique · À documenter",
+    "description": "Projet de Machine Learning lié à la classification énergétique des bâtiments.",
+    "tools": [
+      "Machine Learning"
+    ],
+    "steps": [
+      "Étudier une problématique de classification énergétique."
+    ],
+    "result": "",
+    "architecture": "",
+    "limit": "Dataset, algorithmes, protocole d’évaluation et résultats à vérifier dans les fichiers du projet."
+  }
+]

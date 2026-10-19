@@ -1,0 +1,56 @@
+[
+  {
+    "issuer": "Oracle",
+    "title": "Oracle Cloud Infrastructure Certified Architect Associate",
+    "holder": "Aya BERDAY",
+    "issued": "2026-09-03",
+    "expires": "2028-09-03",
+    "certificate_pdf": "assets/Oracle-OCI-Aya-Berday.pdf",
+    "verification_url": null
+  },
+  {
+    "issuer": "Honoris Online Academy · CrossKnowledge",
+    "title": "Instaurer la confiance en contexte interculturel",
+    "holder": "Aya BERDAY",
+    "issued": "2026-05-19",
+    "certificate_image": "assets/certifications/confiance-interculturelle.png",
+    "verification_url": null,
+    "evidence": "Capture fournie ; vérification en ligne non effectuée"
+  },
+  {
+    "issuer": "Honoris Online Academy · CrossKnowledge",
+    "title": "L’influence de la culture sur les méthodes de travail",
+    "holder": "Aya BERDAY",
+    "issued": "2026-05-19",
+    "certificate_image": "assets/certifications/culture-travail.png",
+    "verification_url": null,
+    "evidence": "Capture fournie ; vérification en ligne non effectuée"
+  },
+  {
+    "issuer": "University of Michigan · Coursera",
+    "title": "Interactivity with JavaScript",
+    "holder": "Aya BERDAY",
+    "issued": "2024-11-18",
+    "certificate_image": "assets/certifications/javascript-michigan.png",
+    "verification_url": "https://www.coursera.org/account/accomplishments/verify/UL9I7H8KTQBQ",
+    "evidence": "Capture fournie ; vérification en ligne non effectuée"
+  },
+  {
+    "issuer": "EPFL · Coursera",
+    "title": "Introduction à la programmation orientée objet (en C++)",
+    "holder": "Aya BERDAY",
+    "issued": "2024-12-14",
+    "certificate_image": "assets/certifications/cpp-epfl.png",
+    "verification_url": "https://www.coursera.org/account/accomplishments/verify/ZM1JUXQMZ0ZR",
+    "evidence": "Capture fournie ; vérification en ligne non effectuée"
+  },
+  {
+    "issuer": "Johns Hopkins University · Coursera",
+    "title": "The Unix Workbench",
+    "holder": "Aya BERDAY",
+    "issued": "2024-12-14",
+    "certificate_image": "assets/certifications/unix-johns-hopkins.png",
+    "verification_url": "https://www.coursera.org/account/accomplishments/verify/FT8VX6Q605FS",
+    "evidence": "Capture fournie ; vérification en ligne non effectuée"
+  }
+]
