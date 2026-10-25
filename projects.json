@@ -281,12 +281,14 @@
   },
   {
     "slug": "dentaire",
-    "title": "Gestion d’un cabinet dentaire",
+    "title": "DentalTech · Gestion d’un cabinet dentaire",
     "category": "Développement & IA",
     "status": "Projet académique",
-    "description": "Application académique de gestion utilisant Java et MySQL.",
+    "description": "Application académique Java Swing/MVC et MySQL : rôles, patients, rendez-vous, facturation, tableaux de bord et sauvegardes, selon le CV fourni.",
     "tools": [
       "Java",
+      "Swing",
+      "MVC",
       "MySQL"
     ],
     "steps": [
@@ -294,7 +296,7 @@
     ],
     "result": "",
     "architecture": "",
-    "limit": "Fonctionnalités exactes, architecture et captures à documenter."
+    "limit": "Captures, code et résultats de tests à ajouter ; fonctionnalités déclarées dans le CV fourni."
   },
   {
     "slug": "energie",

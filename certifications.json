@@ -52,5 +52,15 @@
     "certificate_image": "assets/certifications/unix-johns-hopkins.png",
     "verification_url": "https://www.coursera.org/account/accomplishments/verify/FT8VX6Q605FS",
     "evidence": "Capture fournie ; vérification en ligne non effectuée"
+  },
+  {
+    "issuer": "EMSI et CyberSup",
+    "title": "Exercice Kasbah — Prix spécial du jury",
+    "holder": "Aya BERDAY",
+    "event_start": "2026-09-23",
+    "event_end": "2026-09-25",
+    "type": "Distinction de serious game",
+    "role": "Cellule 6 — Risque / Conformité",
+    "certificate_image": "assets/certifications/kasbah-prix-jury.jpeg"
   }
 ]
