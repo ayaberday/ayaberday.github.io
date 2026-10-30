@@ -25,3 +25,6 @@ Ne pas ajouter de scores, rangs, missions ou résultats non confirmés. TryHackM
 
 ## Contrôles
 Liens internes et présence des assets vérifiés. Interactions et mise en page vérifiées en navigateur desktop et dans un viewport mobile de 390 px. Aucun déploiement public réalisé pour cette version.
+
+## Mise à jour V6.2
+Ajout du troisième lab TryHackMe Search Skills : 6 tâches, 40 points. Total : 18 projets, labs et sujets. Remplacement du CV par le PDF fourni le 30 octobre 2026, sans modifier son contenu. Liens internes et identité du PDF contrôlés.
