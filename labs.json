@@ -1,0 +1,139 @@
+[
+  {
+    "slug": "tryhackme-offensive",
+    "title": "Offensive Security Intro",
+    "category": "Sécurité offensive",
+    "status": "Réalisé",
+    "description": "4 tâches · 40 points. Évaluer FakeBank, une application bancaire volontairement vulnérable de TryHackMe. Découvrir des ressources web cachées, identifier une faiblesse et démontrer son impact dans un environnement autorisé.",
+    "tools": [
+      "DIRB · Énumération web · Broken Access Control"
+    ],
+    "url": "projets/tryhackme-offensive.html"
+  },
+  {
+    "slug": "tryhackme-defensive",
+    "title": "Defensive Security Intro",
+    "category": "SOC & Détection",
+    "status": "Réalisé",
+    "description": "5 tâches terminées. Examiner une activité d’authentification suspecte visant FakeBank dans un SOC simulé de TryHackMe.",
+    "tools": [
+      "SOC · Brute force · Réponse aux incidents"
+    ],
+    "url": "projets/tryhackme-defensive.html"
+  },
+  {
+    "slug": "tryhackme-search-skills",
+    "title": "Search Skills",
+    "category": "Sécurité offensive",
+    "status": "Réalisé",
+    "description": "6 tâches · 40 points. Recherche avancée, OSINT et reconnaissance passive : distinguer une information publique d’une vulnérabilité confirmée.",
+    "tools": [
+      "OSINT",
+      "Reconnaissance passive",
+      "Recherche technique"
+    ],
+    "url": "projets/tryhackme-search-skills.html"
+  },
+  {
+    "slug": "tryhackme-nmap",
+    "title": "TryHackMe 04 — Nmap",
+    "category": "Sécurité offensive",
+    "status": "Réalisé",
+    "description": "15 tâches · 328 points. Scans Xmas et SYN, investigation des réponses absentes et analyse de scripts NSE.",
+    "tools": [
+      "Nmap",
+      "Linux",
+      "NSE"
+    ],
+    "url": "projets/tryhackme-nmap.html",
+    "source": "Compte rendu TryHackMe fourni par Aya BERDAY. Environnement de formation autorisé.",
+    "achievement": "Terminé · 15 tâches · 328 points",
+    "sections": [
+      {
+        "title": "Contexte et objectif",
+        "html": "<p>Room Nmap, difficulté Easy, terminée selon le compte rendu fourni. Développer la reconnaissance réseau, comprendre les états de ports et interpréter les résultats sans transformer une absence de réponse en vulnérabilité.</p>"
+      },
+      {
+        "title": "Architecture du laboratoire",
+        "html": "<p>TryHackMe AttackBox Linux → réseau de formation autorisé → machine cible isolée. Les commandes ci-dessous utilisent TARGET_IP comme adresse symbolique ; aucun scan n’est exécuté par ce site.</p>"
+      },
+      {
+        "title": "Réalisé / étudié",
+        "html": "<div class=\"table-scroll\"><table><thead><tr><th>Réalisé dans le compte rendu</th><th>Étudié ou exploré</th></tr></thead><tbody><tr><td>Scans TCP Xmas et SYN ; investigation des réponses absentes</td><td>TCP Connect, UDP, NULL et FIN : fonctionnement et limites</td></tr><tr><td>Documentation Nmap et lecture de scripts NSE</td><td>CIDR, sélection des ports et découverte d’hôtes</td></tr><tr><td>Recherche de la dépendance de smb-os-discovery</td><td>Observation d’un TCP Connect avec Wireshark introduite ; aucune capture PCAP jointe</td></tr></tbody></table></div>"
+      },
+      {
+        "title": "Documentation et techniques",
+        "html": "<pre><code>nmap -h\nman nmap</code></pre><div class=\"table-scroll\"><table><thead><tr><th>Technique</th><th>Option</th><th>Principe étudié</th></tr></thead><tbody><tr><td>TCP SYN</td><td>-sS</td><td>Analyse des réponses aux sondes SYN</td></tr><tr><td>TCP Connect</td><td>-sT</td><td>Connexion TCP complète</td></tr><tr><td>UDP</td><td>-sU</td><td>Analyse des réponses UDP et ICMP</td></tr><tr><td>TCP NULL</td><td>-sN</td><td>Aucun drapeau TCP</td></tr><tr><td>TCP FIN</td><td>-sF</td><td>Drapeau FIN</td></tr><tr><td>TCP Xmas</td><td>-sX</td><td>Drapeaux FIN, PSH et URG</td></tr></tbody></table></div><p>Exemples de sélection étudiés, avec cibles généralisées :</p><pre><code>nmap -sn LAB_CIDR\nnmap -p 1000-1500 TARGET_IP\nnmap -p- TARGET_IP</code></pre>"
+      },
+      {
+        "title": "Scan Xmas — sortie rapportée",
+        "html": "<pre><code>nmap -sX -p 1-999 TARGET_IP\nNot shown: 999 open|filtered tcp ports (no-response)</code></pre><p>Les 999 ports sont classés open|filtered. Nmap ne peut pas distinguer ouverture et filtrage à partir de ces réponses. Ce résultat ne confirme aucun port ouvert.</p>"
+      },
+      {
+        "title": "Scan SYN — sortie rapportée",
+        "html": "<pre><code>nmap -sS -p 1-5000 -Pn --disable-arp-ping --reason TARGET_IP\nNot shown: 5000 filtered tcp ports (no-response)</code></pre><p>Les 5 000 ports testés sont classés filtered. Avec -Pn, la découverte d’hôte est ignorée : un affichage « host up » ne démontre pas à lui seul que la cible répond.</p>"
+      },
+      {
+        "title": "Nmap Scripting Engine",
+        "html": "<p>Recherche de ftp-anon.nse pour comprendre la vérification d’un accès FTP anonyme ; lecture du code de smb-os-discovery.nse et identification de sa dépendance déclarée smb-brute. Cette lecture ne signifie pas qu’une attaque par force brute a été exécutée.</p><pre><code>nmap --script-help ftp-anon\n# Exemple étudié, résultat FTP non conservé :\nnmap -p 21 --script ftp-anon TARGET_IP</code></pre><p>Le résultat précis de l’authentification FTP n’a pas été conservé. Aucun accès anonyme réussi n’est revendiqué.</p>"
+      },
+      {
+        "title": "Difficultés et enseignements",
+        "html": "<ul><li>Absence de réponse ICMP : investigation de -Pn et de la découverte ARP. Un hôte silencieux n’est pas nécessairement hors ligne.</li><li>Scans longs : suivi en mode verbeux et prise en compte du nombre de ports, des reprises et du réseau.</li><li>États différents selon les sondes : interprétation de no-response dans le contexte du scan.</li><li>Documentation et code source : utiles pour comprendre arguments et dépendances NSE.</li></ul>"
+      },
+      {
+        "title": "Résultats, preuves et limites",
+        "html": "<p>Room terminée : 15 tâches, 328 points, selon la fiche fournie par Aya. Les extraits ci-dessus sont des sorties rapportées, non des scans reproduits pour le portfolio. Captures de complétion et sorties brutes à joindre. Compétences pratiquées : investigation réseau, terminal Linux, interprétation des scans et recherche technique.</p>"
+      }
+    ]
+  },
+  {
+    "slug": "tryhackme-nmap-basic",
+    "title": "TryHackMe 05 — Nmap Basic Port Scans",
+    "category": "Sécurité offensive",
+    "status": "Réalisé",
+    "description": "8 tâches · 120 points. Scans TCP Connect et UDP, correction de syntaxe et interprétation prudente des services.",
+    "tools": [
+      "Nmap",
+      "TCP / UDP",
+      "Linux"
+    ],
+    "url": "projets/tryhackme-nmap-basic.html",
+    "source": "Compte rendu TryHackMe fourni par Aya BERDAY. Activités limitées au laboratoire autorisé.",
+    "achievement": "Terminé · 8 tâches · 120 points",
+    "sections": [
+      {
+        "title": "Contexte et objectifs",
+        "html": "<p>Room Beginner terminée selon le compte rendu. Comprendre les différences TCP/UDP, découvrir des services accessibles et diagnostiquer les erreurs de commande dans un laboratoire isolé.</p>"
+      },
+      {
+        "title": "Architecture et outils",
+        "html": "<p>AttackBox Linux → machine cible TryHackMe. Nmap depuis le terminal. TARGET_IP représente uniquement la machine autorisée du lab.</p>"
+      },
+      {
+        "title": "Réalisé / étudié",
+        "html": "<div class=\"table-scroll\"><table><thead><tr><th>Réalisé</th><th>Étudié</th></tr></thead><tbody><tr><td>Scans TCP Connect, énumération TCP rapportée</td><td>Three-way handshake : SYN → SYN-ACK → ACK</td></tr><tr><td>Scan UDP des dix ports les plus courants, après correction</td><td>TCP SYN : principe et interprétation des réponses</td></tr><tr><td>Analyse et correction de deux erreurs de syntaxe</td><td>Différences entre ouvert, fermé et filtré</td></tr></tbody></table></div>"
+      },
+      {
+        "title": "TCP Connect — réalisation",
+        "html": "<pre><code>nmap -sT TARGET_IP</code></pre><p>Le compte rendu indique des scans réussis et des services TCP accessibles. Aucun numéro de port ni nom de service n’est ajouté faute de liste conservée. TCP Connect s’appuie sur le mécanisme de connexion du système et établit une connexion complète ; il ne nécessite pas de privilèges de paquets bruts pour cette tentative.</p>"
+      },
+      {
+        "title": "TCP SYN — notion étudiée",
+        "html": "<pre><code>nmap -sS TARGET_IP</code></pre><p>Commande étudiée : SYN-ACK indique généralement un port ouvert, RST un port fermé ; une absence de réponse ou certaines erreurs ICMP peuvent indiquer un filtrage. La fiche ne fournit pas de preuve d’exécution réussie de ce scan dans ce lab.</p>"
+      },
+      {
+        "title": "UDP — réalisation et dépannage",
+        "html": "<pre><code>nmap -sU --top-ports 10 TARGET_IP</code></pre><div class=\"table-scroll\"><table><thead><tr><th>Tentative</th><th>Erreur rapportée</th><th>Correction</th></tr></thead><tbody><tr><td>--top-ports TARGET_IP</td><td>--top-ports should be an integer 1 or greater</td><td>Ajouter 10 avant la cible</td></tr><tr><td>--top-10 TARGET_IP</td><td>unrecognized option &#x27;--top-10&#x27;</td><td>Employer --top-ports 10</td></tr></tbody></table></div><p>Le scan UDP a abouti après correction. UDP ne réalise pas de three-way handshake : ses réponses nécessitent une interprétation distincte. La liste complète des services UDP découverts n’est pas disponible.</p>"
+      },
+      {
+        "title": "Résultats et enseignements",
+        "html": "<ul><li>8 tâches terminées et 120 points, selon le compte rendu fourni.</li><li>Énumération TCP et scan UDP exécutés dans le laboratoire.</li><li>Lecture des erreurs, correction des arguments et nouvelle exécution.</li><li>Un port accessible ne constitue pas à lui seul une vulnérabilité ; analyser le service, sa configuration et son exposition.</li></ul>"
+      },
+      {
+        "title": "Preuves et limites",
+        "html": "<p>La fiche mentionne des captures mais elles ne sont pas jointes à cette version. Les résultats sont donc attribués au compte rendu, sans inventer de services DNS, DHCP ou RPC découverts. À ajouter : écran de complétion et sorties de scan anonymisées.</p>"
+      }
+    ]
+  }
+]

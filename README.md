@@ -1,3 +1,7 @@
+# Mise à jour V7.1 — rubrique TryHackMe distincte
+
+Les 5 labs sont maintenant sous les projets, dans une rubrique dédiée, tous visibles sans filtre ni carrousel. Navigation « Labs THM » et retour depuis chaque fiche. Le catalogue projets contient 18 entrées ; labs.json contient les 5 labs.
+
 # Portfolio Aya BERDAY — V7
 
 Version statique HTML, CSS et JavaScript, issue de la V6.2. Aucun npm install ni build requis. Cette livraison n'a pas été publiée automatiquement.
