@@ -3,16 +3,12 @@
     "slug": "soc-wazuh",
     "title": "Mini-maquette SOC / SIEM",
     "category": "SOC & Détection",
-    "status": "Stage · Laboratoire",
+    "status": "Réalisé",
     "description": "Crédit Agricole du Maroc · juillet–septembre 2026. Centraliser les événements de sécurité et rendre les alertes exploitables dans une maquette isolée.",
     "tools": [
       "Wazuh",
       "Docker",
-      "Linux",
-      "Apache",
-      "FIM",
-      "MITRE ATT&CK",
-      "n8n"
+      "Linux"
     ],
     "steps": [
       "Déployer et configurer la maquette Wazuh et ses agents.",
@@ -23,25 +19,19 @@
     ],
     "result": "Centralisation des journaux, scénarios documentés et premier test webhook. Aucun déploiement dans le SI de production de la banque.",
     "architecture": "Agents Linux / Apache → Wazuh Manager → Indexer → Dashboard ; interface JSON → webhook n8n de test.",
-    "limit": "TheHive, Cortex et l’orchestration SOAR complète constituent un lot collaboratif distinct et une perspective d’intégration, pas une réalisation individuelle industrialisée."
+    "limit": "TheHive, Cortex et l’orchestration SOAR complète constituent un lot collaboratif distinct et une perspective d’intégration, pas une réalisation individuelle industrialisée.",
+    "url": "projets/soc-wazuh.html"
   },
   {
     "slug": "devsecops",
     "title": "La sécurité, du code au conteneur",
     "category": "DevSecOps",
-    "status": "PFA · Réalisé",
+    "status": "Réalisé",
     "description": "Club Billard Elite : intégrer des contrôles de sécurité au cycle de développement d’une application Django/PostgreSQL.",
     "tools": [
       "Django",
       "Docker",
-      "GitHub Actions",
-      "Bandit",
-      "pip-audit",
-      "Gitleaks",
-      "Trivy",
-      "OWASP ZAP",
-      "Prometheus",
-      "Grafana"
+      "GitHub Actions"
     ],
     "steps": [
       "Conteneuriser l’application avec un utilisateur non-root.",
@@ -51,22 +41,19 @@
     ],
     "result": "Une base DevSecOps intégrant conteneurisation, scans et workflow CI/CD est documentée dans le rapport.",
     "architecture": "Code → GitHub Actions → Bandit / pip-audit / Gitleaks → Docker / Trivy → ZAP ; monitoring Prometheus / Grafana.",
-    "limit": "Publication Docker Hub conditionnée aux secrets GitHub ; dashboards Grafana non finalisés ; signature Cosign non implémentée. Aucun score de sécurité inventé. Exécution réelle du workflow à valider ; rapports de scan non fournis dans le dépôt décrit."
+    "limit": "Publication Docker Hub conditionnée aux secrets GitHub ; dashboards Grafana non finalisés ; signature Cosign non implémentée. Aucun score de sécurité inventé. Exécution réelle du workflow à valider ; rapports de scan non fournis dans le dépôt décrit.",
+    "url": "projets/devsecops.html"
   },
   {
     "slug": "audit",
     "title": "Identifier. Corriger. Vérifier.",
     "category": "Sécurité offensive",
-    "status": "Académique · Laboratoire",
+    "status": "Réalisé",
     "description": "Audit et remédiation dans un environnement isolé, avec Metasploitable 2 et des applications volontairement vulnérables.",
     "tools": [
       "Kali Linux",
       "Nmap",
-      "Metasploit",
-      "SQLmap",
-      "Burp Suite",
-      "OWASP ZAP",
-      "DVWA"
+      "Metasploit"
     ],
     "steps": [
       "Reconnaître les services exposés.",
@@ -75,19 +62,19 @@
     ],
     "result": "",
     "architecture": "Kali Linux ↔ cibles volontairement vulnérables dans un laboratoire autorisé.",
-    "limit": "Rapport de tests et preuves avant/après à ajouter ; aucune métrique disponible."
+    "limit": "Rapport de tests et preuves avant/après à ajouter ; aucune métrique disponible.",
+    "url": "projets/audit.html"
   },
   {
     "slug": "vpn",
     "title": "Communications sécurisées par VPN",
     "category": "Réseaux & Systèmes",
-    "status": "Académique · À préciser",
+    "status": "À documenter",
     "description": "Étudier et mettre en place des communications sécurisées entre réseaux. Le CV mentionne OpenVPN et des accès site-à-site et distant.",
     "tools": [
       "VPN",
       "OpenVPN",
-      "Filtrage",
-      "Segmentation"
+      "Filtrage"
     ],
     "steps": [
       "Étudier les tunnels et la sécurisation des échanges.",
@@ -95,20 +82,19 @@
     ],
     "result": "",
     "architecture": "",
-    "limit": "Topologie, configurations et contribution détaillée à confirmer avant publication de résultats techniques."
+    "limit": "Topologie, configurations et contribution détaillée à confirmer avant publication de résultats techniques.",
+    "url": "projets/vpn.html"
   },
   {
     "slug": "zero-trust",
     "title": "Repenser la confiance : Odoo / PostgreSQL",
     "category": "GRC & Conception",
-    "status": "Conception et planification",
+    "status": "Réalisé",
     "description": "Plan de projet académique réalisé avec Adam Elouardi en 2025–2026 pour un scénario d’entreprise AlphaBeta.",
     "tools": [
       "Zero Trust",
       "IAM",
-      "MFA",
-      "Segmentation",
-      "Gestion des risques"
+      "MFA"
     ],
     "steps": [
       "Analyser le contexte, les risques et les actifs sensibles.",
@@ -117,20 +103,19 @@
     ],
     "result": "Livrable : plan de transition et exigences de sécurité. Architecture non déployée.",
     "architecture": "Architecture cible étudiée : accès contrôlés IAM/MFA → application Odoo → PostgreSQL ; segmentation et journaux centralisés.",
-    "limit": "Schéma de conception uniquement ; aucune validation opérationnelle revendiquée."
+    "limit": "Schéma de conception uniquement ; aucune validation opérationnelle revendiquée.",
+    "url": "projets/zero-trust.html"
   },
   {
     "slug": "supervision",
     "title": "Quand le réseau ralentit sans tomber",
     "category": "Réseaux & Systèmes",
-    "status": "Académique · Réalisé",
+    "status": "Réalisé",
     "description": "Observer l’impact d’une panne sur la latence, les pertes et l’accessibilité HTTP dans un laboratoire à trois VM Ubuntu.",
     "tools": [
       "Ubuntu",
       "VirtualBox",
-      "Nginx",
-      "tc/netem",
-      "ping"
+      "Nginx"
     ],
     "steps": [
       "Créer les réseaux LAN et DMZ et activer le routage.",
@@ -140,13 +125,14 @@
     ],
     "result": "RTT moyen : environ 4,515 ms avant dégradation, 156,629 ms après. Pertes observées : 20 à 30 % sur de petits échantillons pour un taux configuré de 10 %.",
     "architecture": "VM supervision (LAN) → VM routeur (tc/netem) → VM cible Nginx (DMZ).",
-    "limit": "Mesures de laboratoire ; absence de Prometheus, Grafana ou Zabbix. UFW temporairement désactivé pendant les tests : ce lab ne démontre pas un durcissement de production."
+    "limit": "Mesures de laboratoire ; absence de Prometheus, Grafana ou Zabbix. UFW temporairement désactivé pendant les tests : ce lab ne démontre pas un durcissement de production.",
+    "url": "projets/supervision.html"
   },
   {
     "slug": "incidents",
     "title": "Qualifier les incidents pour mieux répondre",
     "category": "GRC & Conception",
-    "status": "Méthodologie académique",
+    "status": "Étudié",
     "description": "Travail autour de la gestion et de la classification des incidents selon ISO/IEC 27035.",
     "tools": [
       "ISO/IEC 27035",
@@ -160,7 +146,8 @@
     ],
     "result": "",
     "architecture": "",
-    "limit": "Cas pratiques et livrables détaillés à ajouter."
+    "limit": "Cas pratiques et livrables détaillés à ajouter.",
+    "url": "projets/incidents.html"
   },
   {
     "slug": "dmz",
@@ -171,29 +158,26 @@
     "tools": [
       "Proxmox",
       "VM",
-      "DMZ",
-      "Pare-feu",
-      "NAT"
+      "DMZ"
     ],
     "steps": [
       "Périmètre annoncé : virtualisation, segmentation et filtrage."
     ],
     "result": "",
     "architecture": "",
-    "limit": "Architecture exacte et contribution personnelle à confirmer ; aucune configuration précise présentée comme validée."
+    "limit": "Architecture exacte et contribution personnelle à confirmer ; aucune configuration précise présentée comme validée.",
+    "url": "projets/dmz.html"
   },
   {
     "slug": "linux",
     "title": "Administration et sécurisation Linux",
     "category": "Réseaux & Systèmes",
-    "status": "Travaux pratiques",
+    "status": "Étudié",
     "description": "Regroupement de travaux académiques d’administration Unix/Linux.",
     "tools": [
       "Linux",
       "Unix",
-      "LVM",
-      "RAID",
-      "ACL"
+      "LVM"
     ],
     "steps": [
       "Étudier le stockage et l’organisation du système de fichiers.",
@@ -202,16 +186,17 @@
     ],
     "result": "",
     "architecture": "",
-    "limit": "Commandes, configurations et comptes rendus à ajouter."
+    "limit": "Commandes, configurations et comptes rendus à ajouter.",
+    "url": "projets/linux.html"
   },
   {
     "slug": "rsa",
-    "title": "Comprendre la factorisation de RSA",
+    "title": "RSA — comparer Fermat et Pollard rho",
     "category": "Cryptographie & IA",
-    "status": "Travaux académiques",
-    "description": "Étude pédagogique des méthodes de Fermat et rho de Pollard pour la recherche de facteurs non triviaux.",
+    "status": "Réalisé",
+    "description": "Expérimentation sur de petits modules pédagogiques : influence de la proximité des facteurs et limites de calcul.",
     "tools": [
-      "RSA",
+      "Python",
       "Fermat",
       "Pollard rho"
     ],
@@ -222,53 +207,133 @@
     ],
     "result": "",
     "architecture": "",
-    "limit": "Compte rendu absent de ce dossier : aucun temps d’exécution, entier factorisé ou résultat expérimental revendiqué."
+    "limit": "Compte rendu absent de ce dossier : aucun temps d’exécution, entier factorisé ou résultat expérimental revendiqué.",
+    "url": "projets/rsa.html",
+    "source": "Compte rendu Challenge 2 Fermat / Pollard rho — Aya BERDAY et Ayman Bouarfa.",
+    "achievement": "Travail académique réalisé",
+    "sections": [
+      {
+        "title": "Contexte et objectif",
+        "html": "<p>Challenge académique réalisé avec Ayman Bouarfa. Comparer deux méthodes de factorisation, observer leurs limites et comprendre la reconstruction pédagogique d’une clé RSA. Les modules de 54 et 70 bits ne représentent pas une clé RSA sécurisée moderne.</p>"
+      },
+      {
+        "title": "Méthodologie réalisée",
+        "html": "<p>Scripts Python ; cinq exécutions par cas pour les durées moyennes. Les cas 6 et 7 partagent un module de 54 bits dont les facteurs diffèrent de 76. Le cas 8 utilise un module de 70 bits. La limite de Fermat est fixée à un million d’itérations.</p>"
+      },
+      {
+        "title": "Résultats du rapport",
+        "html": "<div class=\"table-scroll\"><table><thead><tr><th>Cas</th><th>Fermat</th><th>Pollard rho</th></tr></thead><tbody><tr><td>6 · 54 bits</td><td>1 itération · 0,00142 ms</td><td>3 650 itérations · 2,27158 ms</td></tr><tr><td>7 · 54 bits</td><td>1 itération · 0,00128 ms</td><td>3 650 itérations · 2,48582 ms</td></tr><tr><td>8 · 70 bits</td><td>Échec à 1 000 000 · 134,02484 ms</td><td>18 102 itérations · 17,63930 ms</td></tr></tbody></table></div><p>Les très petites durées sont sensibles à la résolution de mesure et à l’environnement. Les résultats ne constituent pas un benchmark général.</p>"
+      },
+      {
+        "title": "Interprétation",
+        "html": "<p>Fermat est efficace dans les cas à facteurs proches. Modifier l’exposant public ne change pas la factorisation d’un même module. Après obtention des facteurs, calcul de φ(n), inverse modulaire d et vérification e×d ≡ 1 mod φ(n).</p>"
+      },
+      {
+        "title": "Preuves et limites",
+        "html": "<p>Rapport comparatif et code Python présents dans les travaux fournis. Les fichiers de clés privées et messages ne sont pas intégrés à la version publique. Aucun cassage de RSA correctement dimensionné n’est revendiqué.</p>"
+      }
+    ]
   },
   {
     "slug": "forensic",
-    "title": "Forensique numérique",
+    "title": "Forensique — récupérer et vérifier",
     "category": "SOC & Détection",
-    "status": "En formation · À enrichir",
-    "description": "Module étudié avec travaux pratiques.",
+    "status": "Réalisé",
+    "description": "Image EXT4 de 200 Mo : récupération ciblée de 40 octets et vérification SHA-256, avec limites du protocole NTFS.",
     "tools": [
-      "Forensique numérique"
+      "The Sleuth Kit",
+      "EXT4",
+      "SHA-256"
     ],
     "steps": [
       "Comprendre la démarche d’investigation numérique."
     ],
     "result": "",
     "architecture": "",
-    "limit": "Sujets, outils et preuves à fournir avant rédaction des réalisations détaillées."
+    "limit": "Sujets, outils et preuves à fournir avant rédaction des réalisations détaillées.",
+    "url": "projets/forensic.html",
+    "source": "Compte rendu TP3 Digital Forensics — Aya BERDAY.",
+    "achievement": "Travail académique réalisé",
+    "sections": [
+      {
+        "title": "Contexte et objectif",
+        "html": "<p>TP3 Digital Forensics, 29 octobre et 3 novembre 2026. Observer les effets d’une suppression et vérifier l’intégrité d’un contenu récupéré. La clé USB prévue étant indisponible, l’expérience documentée utilise une image virtuelle EXT4 de 200 Mo sous Ubuntu / VirtualBox.</p>"
+      },
+      {
+        "title": "Architecture et outils",
+        "html": "<p>Image EXT4 → copies avant/après suppression → fls / istat / icat (The Sleuth Kit) → recherche brute d’un contenu connu → extraction dd → comparaison SHA-256. L’image contient 51 200 blocs de 4 Ko.</p>"
+      },
+      {
+        "title": "Méthodologie réalisée",
+        "html": "<ul><li>Vérifier des empreintes identiques sur les copies avant suppression ; observer le fichier à l’inode 12.</li><li>Après suppression : entrée absente de fls, inode non alloué, taille et nombre de liens nuls.</li><li>Constater l’échec de récupération par métadonnées avec icat -r.</li><li>Rechercher la chaîne connue dans l’image brute ; retrouver son offset 136314880.</li><li>Extraire 40 octets avec dd et comparer leur SHA-256 à la référence avant suppression.</li></ul>"
+      },
+      {
+        "title": "Résultats",
+        "html": "<div class=\"table-scroll\"><table><thead><tr><th>Vérification</th><th>Observation</th></tr></thead><tbody><tr><td>Récupération par inode après suppression</td><td>Aucun contenu avec icat -r</td></tr><tr><td>Recherche brute ciblée</td><td>Chaîne connue retrouvée à l’offset 136314880</td></tr><tr><td>Contenu extrait</td><td>40 octets, saut de ligne compris</td></tr><tr><td>SHA-256 référence / récupération</td><td>Identiques</td></tr></tbody></table></div><pre><code>64792c09fa8038dab60b2e319413775f0aad256888eb18ff678f93bd5ad280ff</code></pre>"
+      },
+      {
+        "title": "NTFS / EXT4 — comparaison limitée",
+        "html": "<p>Un texte NTFS récupéré lors d’un travail antérieur est conservé, mais le protocole complet de suppression, extraction MFT et hachage n’est pas suffisamment documenté. Une ancienne image EXT4 ne dispose pas d’une paire avant/après exploitable. Aucun taux de réussite comparatif entre systèmes n’est donc annoncé.</p>"
+      },
+      {
+        "title": "Preuves, limites et enseignements",
+        "html": "<p>Le rapport personnel contient les commandes et captures. L’égalité de hash confirme le contenu connu de 40 octets dans ces conditions contrôlées. Elle ne démontre ni récupération générale, ni carving autonome, ni chaîne de conservation judiciaire complète.</p>"
+      }
+    ]
   },
   {
     "slug": "ia-cyber",
-    "title": "IA appliquée à la cybersécurité",
+    "title": "IA — modéliser le trafic, interpréter l’écart",
     "category": "Cryptographie & IA",
-    "status": "En formation · À enrichir",
-    "description": "Module étudié avec pratique ; rubrique destinée aux notebooks et rapports.",
+    "status": "Réalisé",
+    "description": "Régression linéaire sur 20 observations synthétiques ; détection pédagogique d’un écart, sans attaque réelle revendiquée.",
     "tools": [
-      "IA",
-      "Cybersécurité"
+      "Python",
+      "scikit-learn",
+      "Colab"
     ],
     "steps": [
       "Relier les méthodes d’intelligence artificielle aux enjeux de sécurité."
     ],
     "result": "",
     "architecture": "",
-    "limit": "Dataset, algorithmes et résultats à documenter. Aucune performance revendiquée."
+    "limit": "Dataset, algorithmes et résultats à documenter. Aucune performance revendiquée.",
+    "url": "projets/ia-cyber.html",
+    "source": "Compte rendu TD/TP IA Cybersécurité — Aya BERDAY.",
+    "achievement": "Travail académique réalisé",
+    "sections": [
+      {
+        "title": "Contexte et objectifs",
+        "html": "<p>TD/TP IA et cybersécurité. Modéliser le trafic attendu selon le nombre d’utilisateurs puis examiner un écart entre prévision et mesure. Jeu synthétique de 20 observations, pas de trafic de production.</p>"
+      },
+      {
+        "title": "Architecture et réalisation",
+        "html": "<p>Google Colab → pandas / NumPy → séparation entraînement-test → LinearRegression scikit-learn → prévisions et résidus → visualisations Matplotlib. Séparation : 16 observations d’entraînement et 4 de test, test_size=0.2, random_state=42.</p>"
+      },
+      {
+        "title": "Modèle et résultats rapportés",
+        "html": "<pre><code>trafic prévu (Mbps) = 4.6729 + 1.5103 × nombre_utilisateurs</code></pre><div class=\"table-scroll\"><table><thead><tr><th>Mesure sur le test</th><th>Valeur</th></tr></thead><tbody><tr><td>MAE</td><td>0,3621 Mbps</td></tr><tr><td>MSE</td><td>0,2200 Mbps²</td></tr><tr><td>R²</td><td>0,999937</td></tr></tbody></table></div><p>Ces métriques concernent un très petit jeu synthétique quasi linéaire. Elles ne permettent pas d’affirmer une performance généralisable à un réseau réel.</p>"
+      },
+      {
+        "title": "Scénario d’anomalie simulée",
+        "html": "<p>Pour 110 utilisateurs, le modèle prévoit 170,81 Mbps. Avec une mesure simulée de 220 Mbps, l’écart est de 49,19 Mbps et dépasse le seuil pédagogique de 40 Mbps. Une mesure de 180 Mbps reste sous ce seuil ; 260 Mbps le dépasse.</p><p>Le signal indique un écart à examiner. Il ne confirme ni intrusion ni attaque DDoS. Le seuil n’a pas été calibré sur des incidents réels.</p>"
+      },
+      {
+        "title": "Preuves et perspectives",
+        "html": "<p>Rapport avec résultats, tableaux et captures Colab. Étendre les données, examiner les résidus et valider sur une période indépendante seraient des étapes supplémentaires. Les fiches SVC / Random Forest sont des supports de formation, pas des résultats ajoutés à cette réalisation.</p>"
+      }
+    ]
   },
   {
     "slug": "mentorat",
     "title": "Une plateforme pour transmettre",
     "category": "Développement & IA",
-    "status": "Stage OCP · 2025",
+    "status": "Réalisé",
     "description": "Développement d’une plateforme de mentorat avec Django au cours du stage OCP Group, juillet–septembre 2025.",
     "tools": [
       "Python",
       "Django",
-      "Git",
-      "GitHub",
-      "Render"
+      "Git"
     ],
     "steps": [
       "Développer les fonctionnalités de la plateforme.",
@@ -277,18 +342,17 @@
     ],
     "result": "Expérience en conception applicative et développement web en environnement professionnel.",
     "architecture": "",
-    "limit": "Démonstration, architecture détaillée et captures à ajouter. Aucun nombre d’utilisateurs revendiqué."
+    "limit": "Démonstration, architecture détaillée et captures à ajouter. Aucun nombre d’utilisateurs revendiqué.",
+    "url": "projets/mentorat.html"
   },
   {
     "slug": "dentaire",
-    "title": "DentalTech · Gestion d’un cabinet dentaire",
+    "title": "DentalTech · Cabinet dentaire",
     "category": "Développement & IA",
-    "status": "Projet académique",
-    "description": "Application académique Java Swing/MVC et MySQL : rôles, patients, rendez-vous, facturation, tableaux de bord et sauvegardes, selon le CV fourni.",
+    "status": "Réalisé",
+    "description": "Application Java Swing/MVC et MySQL : rôles, patients, rendez-vous, facturation, tableaux de bord et sauvegardes.",
     "tools": [
       "Java",
-      "Swing",
-      "MVC",
       "MySQL"
     ],
     "steps": [
@@ -296,13 +360,14 @@
     ],
     "result": "",
     "architecture": "",
-    "limit": "Captures, code et résultats de tests à ajouter ; fonctionnalités déclarées dans le CV fourni."
+    "limit": "Captures, code et résultats de tests à ajouter ; fonctionnalités déclarées dans le CV fourni.",
+    "url": "projets/dentaire.html"
   },
   {
     "slug": "energie",
     "title": "Classification énergétique des bâtiments",
     "category": "Développement & IA",
-    "status": "Projet académique · À documenter",
+    "status": "À documenter",
     "description": "Projet de Machine Learning lié à la classification énergétique des bâtiments.",
     "tools": [
       "Machine Learning"
@@ -312,6 +377,263 @@
     ],
     "result": "",
     "architecture": "",
-    "limit": "Dataset, algorithmes, protocole d’évaluation et résultats à vérifier dans les fichiers du projet."
+    "limit": "Dataset, algorithmes, protocole d’évaluation et résultats à vérifier dans les fichiers du projet.",
+    "url": "projets/energie.html"
+  },
+  {
+    "slug": "tryhackme-offensive",
+    "title": "Offensive Security Intro",
+    "category": "Sécurité offensive",
+    "status": "Réalisé",
+    "description": "4 tâches · 40 points. Évaluer FakeBank, une application bancaire volontairement vulnérable de TryHackMe. Découvrir des ressources web cachées, identifier une faiblesse et démontrer son impact dans un environnement autorisé.",
+    "tools": [
+      "DIRB · Énumération web · Broken Access Control"
+    ],
+    "url": "projets/tryhackme-offensive.html"
+  },
+  {
+    "slug": "tryhackme-defensive",
+    "title": "Defensive Security Intro",
+    "category": "SOC & Détection",
+    "status": "Réalisé",
+    "description": "5 tâches terminées. Examiner une activité d’authentification suspecte visant FakeBank dans un SOC simulé de TryHackMe.",
+    "tools": [
+      "SOC · Brute force · Réponse aux incidents"
+    ],
+    "url": "projets/tryhackme-defensive.html"
+  },
+  {
+    "slug": "tryhackme-search-skills",
+    "title": "Search Skills",
+    "category": "Sécurité offensive",
+    "status": "Réalisé",
+    "description": "6 tâches · 40 points. Recherche avancée, OSINT et reconnaissance passive : distinguer une information publique d’une vulnérabilité confirmée.",
+    "tools": [
+      "OSINT",
+      "Reconnaissance passive",
+      "Recherche technique"
+    ],
+    "url": "projets/tryhackme-search-skills.html"
+  },
+  {
+    "slug": "tryhackme-nmap",
+    "title": "TryHackMe 04 — Nmap",
+    "category": "Sécurité offensive",
+    "status": "Réalisé",
+    "description": "15 tâches · 328 points. Scans Xmas et SYN, investigation des réponses absentes et analyse de scripts NSE.",
+    "tools": [
+      "Nmap",
+      "Linux",
+      "NSE"
+    ],
+    "url": "projets/tryhackme-nmap.html",
+    "source": "Compte rendu TryHackMe fourni par Aya BERDAY. Environnement de formation autorisé.",
+    "achievement": "Terminé · 15 tâches · 328 points",
+    "sections": [
+      {
+        "title": "Contexte et objectif",
+        "html": "<p>Room Nmap, difficulté Easy, terminée selon le compte rendu fourni. Développer la reconnaissance réseau, comprendre les états de ports et interpréter les résultats sans transformer une absence de réponse en vulnérabilité.</p>"
+      },
+      {
+        "title": "Architecture du laboratoire",
+        "html": "<p>TryHackMe AttackBox Linux → réseau de formation autorisé → machine cible isolée. Les commandes ci-dessous utilisent TARGET_IP comme adresse symbolique ; aucun scan n’est exécuté par ce site.</p>"
+      },
+      {
+        "title": "Réalisé / étudié",
+        "html": "<div class=\"table-scroll\"><table><thead><tr><th>Réalisé dans le compte rendu</th><th>Étudié ou exploré</th></tr></thead><tbody><tr><td>Scans TCP Xmas et SYN ; investigation des réponses absentes</td><td>TCP Connect, UDP, NULL et FIN : fonctionnement et limites</td></tr><tr><td>Documentation Nmap et lecture de scripts NSE</td><td>CIDR, sélection des ports et découverte d’hôtes</td></tr><tr><td>Recherche de la dépendance de smb-os-discovery</td><td>Observation d’un TCP Connect avec Wireshark introduite ; aucune capture PCAP jointe</td></tr></tbody></table></div>"
+      },
+      {
+        "title": "Documentation et techniques",
+        "html": "<pre><code>nmap -h\nman nmap</code></pre><div class=\"table-scroll\"><table><thead><tr><th>Technique</th><th>Option</th><th>Principe étudié</th></tr></thead><tbody><tr><td>TCP SYN</td><td>-sS</td><td>Analyse des réponses aux sondes SYN</td></tr><tr><td>TCP Connect</td><td>-sT</td><td>Connexion TCP complète</td></tr><tr><td>UDP</td><td>-sU</td><td>Analyse des réponses UDP et ICMP</td></tr><tr><td>TCP NULL</td><td>-sN</td><td>Aucun drapeau TCP</td></tr><tr><td>TCP FIN</td><td>-sF</td><td>Drapeau FIN</td></tr><tr><td>TCP Xmas</td><td>-sX</td><td>Drapeaux FIN, PSH et URG</td></tr></tbody></table></div><p>Exemples de sélection étudiés, avec cibles généralisées :</p><pre><code>nmap -sn LAB_CIDR\nnmap -p 1000-1500 TARGET_IP\nnmap -p- TARGET_IP</code></pre>"
+      },
+      {
+        "title": "Scan Xmas — sortie rapportée",
+        "html": "<pre><code>nmap -sX -p 1-999 TARGET_IP\nNot shown: 999 open|filtered tcp ports (no-response)</code></pre><p>Les 999 ports sont classés open|filtered. Nmap ne peut pas distinguer ouverture et filtrage à partir de ces réponses. Ce résultat ne confirme aucun port ouvert.</p>"
+      },
+      {
+        "title": "Scan SYN — sortie rapportée",
+        "html": "<pre><code>nmap -sS -p 1-5000 -Pn --disable-arp-ping --reason TARGET_IP\nNot shown: 5000 filtered tcp ports (no-response)</code></pre><p>Les 5 000 ports testés sont classés filtered. Avec -Pn, la découverte d’hôte est ignorée : un affichage « host up » ne démontre pas à lui seul que la cible répond.</p>"
+      },
+      {
+        "title": "Nmap Scripting Engine",
+        "html": "<p>Recherche de ftp-anon.nse pour comprendre la vérification d’un accès FTP anonyme ; lecture du code de smb-os-discovery.nse et identification de sa dépendance déclarée smb-brute. Cette lecture ne signifie pas qu’une attaque par force brute a été exécutée.</p><pre><code>nmap --script-help ftp-anon\n# Exemple étudié, résultat FTP non conservé :\nnmap -p 21 --script ftp-anon TARGET_IP</code></pre><p>Le résultat précis de l’authentification FTP n’a pas été conservé. Aucun accès anonyme réussi n’est revendiqué.</p>"
+      },
+      {
+        "title": "Difficultés et enseignements",
+        "html": "<ul><li>Absence de réponse ICMP : investigation de -Pn et de la découverte ARP. Un hôte silencieux n’est pas nécessairement hors ligne.</li><li>Scans longs : suivi en mode verbeux et prise en compte du nombre de ports, des reprises et du réseau.</li><li>États différents selon les sondes : interprétation de no-response dans le contexte du scan.</li><li>Documentation et code source : utiles pour comprendre arguments et dépendances NSE.</li></ul>"
+      },
+      {
+        "title": "Résultats, preuves et limites",
+        "html": "<p>Room terminée : 15 tâches, 328 points, selon la fiche fournie par Aya. Les extraits ci-dessus sont des sorties rapportées, non des scans reproduits pour le portfolio. Captures de complétion et sorties brutes à joindre. Compétences pratiquées : investigation réseau, terminal Linux, interprétation des scans et recherche technique.</p>"
+      }
+    ]
+  },
+  {
+    "slug": "tryhackme-nmap-basic",
+    "title": "TryHackMe 05 — Nmap Basic Port Scans",
+    "category": "Sécurité offensive",
+    "status": "Réalisé",
+    "description": "8 tâches · 120 points. Scans TCP Connect et UDP, correction de syntaxe et interprétation prudente des services.",
+    "tools": [
+      "Nmap",
+      "TCP / UDP",
+      "Linux"
+    ],
+    "url": "projets/tryhackme-nmap-basic.html",
+    "source": "Compte rendu TryHackMe fourni par Aya BERDAY. Activités limitées au laboratoire autorisé.",
+    "achievement": "Terminé · 8 tâches · 120 points",
+    "sections": [
+      {
+        "title": "Contexte et objectifs",
+        "html": "<p>Room Beginner terminée selon le compte rendu. Comprendre les différences TCP/UDP, découvrir des services accessibles et diagnostiquer les erreurs de commande dans un laboratoire isolé.</p>"
+      },
+      {
+        "title": "Architecture et outils",
+        "html": "<p>AttackBox Linux → machine cible TryHackMe. Nmap depuis le terminal. TARGET_IP représente uniquement la machine autorisée du lab.</p>"
+      },
+      {
+        "title": "Réalisé / étudié",
+        "html": "<div class=\"table-scroll\"><table><thead><tr><th>Réalisé</th><th>Étudié</th></tr></thead><tbody><tr><td>Scans TCP Connect, énumération TCP rapportée</td><td>Three-way handshake : SYN → SYN-ACK → ACK</td></tr><tr><td>Scan UDP des dix ports les plus courants, après correction</td><td>TCP SYN : principe et interprétation des réponses</td></tr><tr><td>Analyse et correction de deux erreurs de syntaxe</td><td>Différences entre ouvert, fermé et filtré</td></tr></tbody></table></div>"
+      },
+      {
+        "title": "TCP Connect — réalisation",
+        "html": "<pre><code>nmap -sT TARGET_IP</code></pre><p>Le compte rendu indique des scans réussis et des services TCP accessibles. Aucun numéro de port ni nom de service n’est ajouté faute de liste conservée. TCP Connect s’appuie sur le mécanisme de connexion du système et établit une connexion complète ; il ne nécessite pas de privilèges de paquets bruts pour cette tentative.</p>"
+      },
+      {
+        "title": "TCP SYN — notion étudiée",
+        "html": "<pre><code>nmap -sS TARGET_IP</code></pre><p>Commande étudiée : SYN-ACK indique généralement un port ouvert, RST un port fermé ; une absence de réponse ou certaines erreurs ICMP peuvent indiquer un filtrage. La fiche ne fournit pas de preuve d’exécution réussie de ce scan dans ce lab.</p>"
+      },
+      {
+        "title": "UDP — réalisation et dépannage",
+        "html": "<pre><code>nmap -sU --top-ports 10 TARGET_IP</code></pre><div class=\"table-scroll\"><table><thead><tr><th>Tentative</th><th>Erreur rapportée</th><th>Correction</th></tr></thead><tbody><tr><td>--top-ports TARGET_IP</td><td>--top-ports should be an integer 1 or greater</td><td>Ajouter 10 avant la cible</td></tr><tr><td>--top-10 TARGET_IP</td><td>unrecognized option &#x27;--top-10&#x27;</td><td>Employer --top-ports 10</td></tr></tbody></table></div><p>Le scan UDP a abouti après correction. UDP ne réalise pas de three-way handshake : ses réponses nécessitent une interprétation distincte. La liste complète des services UDP découverts n’est pas disponible.</p>"
+      },
+      {
+        "title": "Résultats et enseignements",
+        "html": "<ul><li>8 tâches terminées et 120 points, selon le compte rendu fourni.</li><li>Énumération TCP et scan UDP exécutés dans le laboratoire.</li><li>Lecture des erreurs, correction des arguments et nouvelle exécution.</li><li>Un port accessible ne constitue pas à lui seul une vulnérabilité ; analyser le service, sa configuration et son exposition.</li></ul>"
+      },
+      {
+        "title": "Preuves et limites",
+        "html": "<p>La fiche mentionne des captures mais elles ne sont pas jointes à cette version. Les résultats sont donc attribués au compte rendu, sans inventer de services DNS, DHCP ou RPC découverts. À ajouter : écran de complétion et sorties de scan anonymisées.</p>"
+      }
+    ]
+  },
+  {
+    "slug": "cloud-security",
+    "title": "Cloud Security — observer, corriger, vérifier",
+    "category": "Cloud & OSINT",
+    "status": "Réalisé",
+    "description": "ZAP sur Juice Shop et contrôle S3 sur LocalStack : un contrôle Prowler passe de FAIL à PASS après remédiation.",
+    "tools": [
+      "Docker",
+      "ZAP",
+      "LocalStack"
+    ],
+    "url": "projets/cloud-security.html",
+    "source": "Compte rendu TP Cloud Sécurité — Aya BERDAY, octobre 2026.",
+    "achievement": "Travail académique réalisé",
+    "sections": [
+      {
+        "title": "Contexte et objectifs",
+        "html": "<p>TP Cloud Security, octobre 2026. Examiner des mauvaises configurations dans un environnement pédagogique, distinguer alertes et vulnérabilités confirmées, puis vérifier une correction.</p>"
+      },
+      {
+        "title": "Architecture",
+        "html": "<p>Terminal Linux / Nmap → Juice Shop dans Docker sur le port 3000 ; ZAP Baseline → application locale. AWS CLI / Prowler 5.44.0 → LocalStack 2026.9.1 → bucket S3 de test. Il s’agit d’une émulation locale, pas d’un audit AWS de production.</p>"
+      },
+      {
+        "title": "Reconnaissance réalisée",
+        "html": "<p>Le rapport documente un scan autorisé de scanme.nmap.org : 3 ports ouverts sur les 1 000 courants, 8 filtrés et 989 fermés. Un scan complet avec détection de versions est également rapporté. Ces observations historiques ne prouvent aucune vulnérabilité actuelle. Sur la cible locale, le port 3000 répond en HTTP avec le contenu OWASP Juice Shop ; l’étiquette de service incertaine de Nmap n’est pas une identification définitive.</p>"
+      },
+      {
+        "title": "ZAP Baseline — analyse passive",
+        "html": "<div class=\"table-scroll\"><table><thead><tr><th>Mesure du rapport</th><th>Résultat</th></tr></thead><tbody><tr><td>URLs observées</td><td>158</td></tr><tr><td>Contrôles PASS dans le terminal</td><td>59</td></tr><tr><td>Règles avec avertissement dans le terminal</td><td>8</td></tr><tr><td>Répartition du rapport HTML</td><td>0 High · 2 Medium · 5 Low · 2 Informational</td></tr></tbody></table></div><p>Les compteurs portent sur des représentations différentes. Ils ne signifient pas neuf vulnérabilités exploitables. CSP absente et CORS permissif sont à évaluer dans leur contexte ; une fonction JavaScript signalée ne prouve pas une XSS. Recommandations : CSP adaptée, restriction des origines et revue des entrées non fiables.</p>"
+      },
+      {
+        "title": "S3 — réalisation et remédiation",
+        "html": "<p>Le bucket de test contient un objet de 49 octets. Les quatre paramètres PublicAccessBlock sont initialement activés ; aucune politique explicite de bucket, chiffrement par défaut AES256. Le TP les désactive volontairement, puis les réactive.</p><div class=\"table-scroll\"><table><thead><tr><th>Contrôle Prowler</th><th>Avant correction</th><th>Après correction</th></tr></thead><tbody><tr><td>s3_bucket_level_public_access_block</td><td>FAIL / High</td><td>PASS</td></tr></tbody></table></div><p>Désactiver PublicAccessBlock ne rend pas automatiquement l’objet public. Le résultat prouve la correction du contrôle vérifié dans LocalStack, pas la sécurisation complète d’un compte cloud.</p>"
+      },
+      {
+        "title": "Étudié / non revendiqué",
+        "html": "<p>La chaîne SSRF → métadonnées → stockage → exfiltration est un scénario théorique analysé, pas une exploitation réalisée. Les fiches IAM sont des supports d’exercice : aucune implémentation IAM supplémentaire n’est revendiquée sans compte rendu.</p>"
+      },
+      {
+        "title": "Résultats et preuves",
+        "html": "<p>Source : compte rendu personnel Cloud Security avec captures. Synthèse des observations et de la remédiation ; les documents bruts ne sont pas publiés ici afin de limiter la diffusion de détails d’environnement. À compléter avec des extraits anonymisés vérifiés.</p>"
+      }
+    ]
+  },
+  {
+    "slug": "cybernova",
+    "title": "CYBERNOVA — audit des accès privilégiés",
+    "category": "GRC & Conception",
+    "status": "Réalisé",
+    "description": "Mission académique : couverture MFA, départs RH et recommandations fondées sur les données disponibles.",
+    "tools": [
+      "Audit IAM",
+      "MFA",
+      "GRC"
+    ],
+    "url": "projets/cybernova.html",
+    "source": "Compte rendu CYBERNOVA — Aya BERDAY et Ayman Bouarfa.",
+    "achievement": "Travail académique réalisé",
+    "sections": [
+      {
+        "title": "Contexte et périmètre",
+        "html": "<p>Scénario académique CYBERNOVA après une tentative de compromission administrateur. Travail d’Aya BERDAY et Ayman Bouarfa. Préparer une mission et analyser un jeu de données ; aucun audit d’une entreprise réelle en production n’est revendiqué.</p>"
+      },
+      {
+        "title": "Architecture et critères",
+        "html": "<p>Périmètre proposé : RH → processus de départ → IAM / Active Directory → VPN administrateur, bastion et accès cloud privilégiés. Sites, période et actifs restent à valider dans le mandat. Références du scénario : politique IAM, CTRL-IAM-07, MFA, journalisation et SMSI.</p>"
+      },
+      {
+        "title": "Méthodologie",
+        "html": "<ul><li>Rapprocher les 41 comptes privilégiés, la couverture MFA et les exceptions.</li><li>Comparer les départs RH aux désactivations ; contrôler approbations, comptes génériques et revues de droits.</li><li>Prévoir une revue des journaux administrateurs et des règles d’engagement.</li><li>Exclure les tests destructifs, dénis de service et scans globaux.</li></ul>"
+      },
+      {
+        "title": "Constats et limites",
+        "html": "<div class=\"table-scroll\"><table><thead><tr><th>Observation documentée</th><th>Interprétation</th><th>Action recommandée</th></tr></thead><tbody><tr><td>6 comptes sans MFA sur 41 (14,6 %)</td><td>Écart apparent ; vérifier exceptions et configuration effective</td><td>Activer MFA et formaliser les exceptions</td></tr><tr><td>4 retards de désactivation, de 2 à 9 jours, sur 10 lignes visibles</td><td>Le dénominateur de 30 départs cité ailleurs n’est pas corroboré</td><td>Rapprochement RH–IAM et désactivation planifiée</td></tr></tbody></table></div><p>La criticité potentiellement élevée dépend de l’exposition et des mesures compensatoires. La cause racine n’est pas démontrée. Les contrôles prévus dans le plan ne sont pas tous des tests exécutés.</p>"
+      },
+      {
+        "title": "Livrables et suite",
+        "html": "<p>Plan de mission, constats argumentés et recommandations. Distinguer l’analyse réalisée du contrôle technique à conduire. Pour confirmer les constats : exports IAM, exceptions approuvées et horodatages RH/IAM à obtenir dans un périmètre autorisé.</p>"
+      }
+    ]
+  },
+  {
+    "slug": "osint",
+    "title": "OSINT — de l’information à l’hypothèse",
+    "category": "Cloud & OSINT",
+    "status": "Réalisé",
+    "description": "Reconnaissance passive documentée ; synthèse publique anonymisée, sans cartographie sensible ni données personnelles.",
+    "tools": [
+      "WHOIS / DNS",
+      "CT / Shodan",
+      "ExifTool"
+    ],
+    "url": "projets/osint.html",
+    "source": "Dossier de preuve OSINT du 14 octobre 2026 — synthèse anonymisée.",
+    "achievement": "Travail académique réalisé",
+    "sections": [
+      {
+        "title": "Contexte et objectif",
+        "html": "<p>Dossier académique de reconnaissance passive du 14 octobre 2026, réalisé avec Ayman Bouarfa, Hossam Akoul et Zakaria Boukhris. Comprendre l’empreinte publique d’une organisation et qualifier la fiabilité des sources.</p>"
+      },
+      {
+        "title": "Méthodologie réalisée",
+        "html": "<div class=\"table-scroll\"><table><thead><tr><th>Source / outil</th><th>Recherche</th><th>Limite</th></tr></thead><tbody><tr><td>WHOIS, DNS (dig)</td><td>NS, MX, TXT, SPF, DMARC, CAA</td><td>DKIM non vérifié ; absence de CAA non assimilée à une vulnérabilité</td></tr><tr><td>crt.sh</td><td>Certificats et noms historiques</td><td>Un nom ne prouve ni activité ni vulnérabilité</td></tr><tr><td>BuiltWith et Shodan</td><td>Technologies et informations déjà indexées</td><td>Versions et observations potentiellement historiques</td></tr><tr><td>Moteurs de recherche / Wayback</td><td>Documents publics et archives</td><td>Une brochure indexée n’est pas une fuite</td></tr><tr><td>ExifTool 12.76</td><td>Métadonnées de quatre PDF publics</td><td>Un producteur PDF ne prouve pas le logiciel actuellement déployé</td></tr></tbody></table></div>"
+      },
+      {
+        "title": "Architecture de recherche",
+        "html": "<p>Sources publiques → collecte passive → comparaison des dates et indices → hypothèses → vérification technique uniquement dans un périmètre autorisé. Aucun scan intrusif ni exploitation n’est revendiqué.</p>"
+      },
+      {
+        "title": "Résultats et limites",
+        "html": "<p>Dossier de preuves et synthèse de l’empreinte publique. Les éléments collectés orientent des vérifications futures ; ils ne démontrent pas des failles exploitables. La cartographie exacte, les IP, sous-domaines et adresses de personnes ont été volontairement exclus de cette version publique.</p>"
+      },
+      {
+        "title": "Preuves et publication",
+        "html": "<p>Le rapport original a servi à cette synthèse mais n’est pas joint au site. Une future annexe publique devra être anonymisée et relue. Les descriptions de méthodes ne sont pas présentées comme des captures d’exécution.</p>"
+      }
+    ]
   }
 ]
